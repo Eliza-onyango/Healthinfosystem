@@ -1,0 +1,5 @@
+# Ignore ALL node_modules (safety net)
+**/node_modules/
+
+# But allow frontend/node_modules if needed (rare)
+!frontend/node_modules/*.mp4

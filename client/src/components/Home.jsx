@@ -8,12 +8,10 @@ const Home = () => {
   const navigate = useNavigate();
   const [loaded, setLoaded] = useState(false);
 
- // Set loaded to true immediately on component mount
- useEffect(() => {
-  setLoaded(true);
-}, []);
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
-  // Stats data
   const stats = [
     { id: 1, value: '1,240+', label: 'Patients Served', icon: <FaHeartbeat className="text-primary" size={40} /> },
     { id: 2, value: '15+', label: 'Health Programs', icon: <FaClinicMedical className="text-primary" size={40} /> },
@@ -22,54 +20,54 @@ const Home = () => {
   ];
 
   return (
-    <div className="container-fluid p-0 ">
-      {/* Hero Section */}
-      <section className="hero-section bg-light py-5 min-vh-100 d-flex align-items-center">
-      <div className="container py-5">
-        <div className="row align-items-center">
-          <div className="col-lg-6 mb-4 mb-lg-0">
-            <div className={`transition-all ${loaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              <h1 className="display-4 fw-bold mb-4">
-                Modern <span className="text-primary">Health</span> Management System
-              </h1>
-              <p className="lead text-muted mb-4">
-                Streamline patient care and program management with our comprehensive healthcare solution.
-              </p>
-              <div className="d-flex gap-3">
-                <button 
-                  className="btn btn-primary btn-lg px-4"
-                  onClick={() => navigate('/clients')}
-                >
-                  <FaUserMd className="me-2" />
-                  Manage Patients
-                </button>
-                <button 
-                  className="btn btn-outline-primary btn-lg px-4"
-                  onClick={() => navigate('/programs')}
-                >
-                  <FaClinicMedical className="me-2" />
-                  View Programs
-                </button>
+    <div className="homepage">
+      {/* Hero Section - Full Width */}
+      <section className="hero-section bg-light py-5 min-vh-200 d-flex align-items-center margin-bottom: 100%">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 mb-4 mb-lg-0">
+              <div className={`transition-all ${loaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+                <h1 className="display-4 fw-bold mb-4">
+                  Modern <span className="text-primary">Health</span> Management System
+                </h1>
+                <p className="lead text-muted mb-4">
+                  Streamline patient care and program management with our comprehensive healthcare solution.
+                </p>
+                <div className="d-flex gap-3">
+                  <button 
+                    className="btn btn-primary btn-lg px-4"
+                    onClick={() => navigate('/clients')}
+                  >
+                    <FaUserMd className="me-2" />
+                    Manage Patients
+                  </button>
+                  <button 
+                    className="btn btn-outline-primary btn-lg px-4"
+                    onClick={() => navigate('/programs')}
+                  >
+                    <FaClinicMedical className="me-2" />
+                    View Programs
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className={`transition-all ${loaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+                <img 
+                  src="https://img.freepik.com/free-vector/medical-team-concept-illustration_114360-8404.jpg" 
+                  alt="Healthcare illustration" 
+                  className="img-fluid rounded-3 shadow-lg"
+                  loading="eager"
+                />
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className={`transition-all ${loaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <img 
-                src="https://img.freepik.com/free-vector/medical-team-concept-illustration_114360-8404.jpg" 
-                alt="Healthcare illustration" 
-                className="img-fluid rounded-3 shadow-lg"
-                loading="eager" // Force immediate loading
-              />
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-      {/* Stats Section */}
+      {/* Stats Section - Full Width */}
       <section className="py-5 bg-white">
-        <div className="container py-4">
+        <div className="container">
           <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce>
             <div className="row g-4">
               {stats.map((stat) => (
@@ -88,9 +86,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Section - Full Width */}
       <section className="py-5 bg-light">
-        <div className="container py-4">
+        <div className="container">
           <AnimationOnScroll animateIn="animate__fadeIn" animateOnce>
             <h2 className="text-center mb-5 display-5 fw-bold">Key Features</h2>
           </AnimationOnScroll>
@@ -146,6 +144,23 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Add minimal custom CSS for full-width sections */}
+      <style jsx>{`
+        .homepage {
+          overflow-x: hidden;
+        }
+        .hero-section,
+        .stats-section,
+        .features-section {
+          width: 100vw;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+        }
+      `}</style>
     </div>
   );
 };

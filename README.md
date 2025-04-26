@@ -4,21 +4,24 @@
 
 A comprehensive health information system designed for clinics and hospitals to manage client data and health programs. This full-stack application provides tools for healthcare providers to register clients, enroll them in health programs, and track their medical information.
 
-![System Screenshot](./screenshot.png)
+<video controls src="Health Information System - Google Chrome 2025-04-26 11-12-39.mp4" title="Title"></video>
 
 ## Features
 
 ### Client Management
+
 - Register new clients with personal and contact information
 - View and search existing client profiles
 - Enroll clients in health programs (TB, Malaria, HIV, etc.)
 
 ### Program Management
+
 - Create and manage health programs
 - Track client enrollment across programs
 - View program participation statistics
 
 ### User Experience
+
 - Responsive design for desktop and mobile
 - Intuitive dashboard and navigation
 - Secure authentication (optional)
@@ -26,6 +29,7 @@ A comprehensive health information system designed for clinics and hospitals to 
 ## Technologies Used
 
 ### Frontend
+
 - React.js with Vite
 - React Router for navigation
 - Bootstrap 5 for styling
@@ -33,6 +37,7 @@ A comprehensive health information system designed for clinics and hospitals to 
 - Axios for API communication
 
 ### Backend
+
 - Node.js with Express
 - MongoDB with Mongoose
 - RESTful API design
@@ -41,6 +46,7 @@ A comprehensive health information system designed for clinics and hospitals to 
 ## Installation
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - MongoDB (local or Atlas cluster)
 - Git
@@ -48,12 +54,14 @@ A comprehensive health information system designed for clinics and hospitals to 
 ### Setup Instructions
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Eliza-onyango/Healthinfosystem.git
    cd health-info-system
    ```
 
 2. **Set up the backend**
+
    ```bash
    cd server
    npm install
@@ -63,6 +71,7 @@ A comprehensive health information system designed for clinics and hospitals to 
    ```
 
 3. **Set up the frontend**
+
    ```bash
    cd ../client
    npm install
@@ -97,14 +106,14 @@ health-info-system/
 
 ## API Endpoints
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/clients` | GET | Get all clients |
-| `/api/clients` | POST | Create new client |
-| `/api/clients/:id` | GET | Get single client |
-| `/api/clients/:id/enroll` | POST | Enroll client in programs |
-| `/api/programs` | GET | Get all programs |
-| `/api/programs` | POST | Create new program |
+| Endpoint                  | Method | Description               |
+| ------------------------- | ------ | ------------------------- |
+| `/api/clients`            | GET    | Get all clients           |
+| `/api/clients`            | POST   | Create new client         |
+| `/api/clients/:id`        | GET    | Get single client         |
+| `/api/clients/:id/enroll` | POST   | Enroll client in programs |
+| `/api/programs`           | GET    | Get all programs          |
+| `/api/programs`           | POST   | Create new program        |
 
 ## Contributing
 
@@ -123,4 +132,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Project Maintainer - [Your Name](mailto:your.email@example.com)
 
 Project Link: [https://github.com/yourusername/health-info-system](https://github.com/yourusername/health-info-system)
-
